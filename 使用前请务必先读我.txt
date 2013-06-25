@@ -1,0 +1,18 @@
+简介：
+    这是一个局域网内的通讯软件，它的名字叫做Chita，是基于RTP协议制作的，使用了Java提供的（古老的！！！）JMF（Java Media Framework）。
+
+
+使用方法：
+
+    由于Chita是基于JMF的，所以在使用前请先安装JMF（注意，在Windows下请使用管理员权限安装，因为JMF需要使用管理员权限来捕获硬件信息）。又由于JMF是基于32位指令设计的（所谓的JAVA不依赖系统呢？！！！），所以请确保用32位的JDK。
+
+    一.在命令行下
+
+        Chita的主入口是Chita.java，它位于Chita/src/edu/chita/base。由于采用了包结构，所以在命令行中，请先进入到src目录，然后使用"javac -encoding GBK edu/chita/base/Chita.java"编译之。之后，再使用"java edu/chita/base/Chita" 运行之即可。
+
+    一.在Eclipse中
+
+        为了安全起见，我不提供完整的文件系统，只提供了源文件，因为你必须重新捕获设备信息而不能使用我的。所以请你自己构建工作空间。但是在构建好之后，直接运行很有可能失败，因为Eclipse的CLASSPATH不一定会采用用户的设置，所以你需要将jmf.jar导入到构建路径中。具体的方法是：菜单栏中的“项目”(或者右击你建立的工程)-> “属性”-> “Java构建路径”-> 在选项卡中选择 “库” -> 在右边的按钮中点击“添加外部JAR”-> 然后进入JMF安装路径下的lib文件夹，选择"jmf.jar"导入即可。样就可以了。
+
+英文版Eclipse的配置流程大致如下。
+“properties”-> “Java Build Path”-> “Libraries”-> "Add External JARs" 
